@@ -88,7 +88,7 @@ if __name__=="__main__":
 
     temp.add_argument("unittest_args",nargs="*")
     takeinputs=temp.parse_args()
-    call=lv.create_lvm()
+    call=lv.create_lvm3()
     print(takeinputs.input1.split(","),takeinputs.input2.split(","),takeinputs.input3.split(","),takeinputs.input4.split(","),takeinputs.input5.split(","),takeinputs.input6.split(","))
     unit.main(argv=sys.argv[:1])
 
