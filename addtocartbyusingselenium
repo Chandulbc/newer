@@ -1,0 +1,74 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time as t
+browser=webdriver.Chrome()
+browser.maximize_window()
+browser.get('https://www.flipkart.com/')
+t.sleep(3)
+print(browser.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input'))
+t.sleep(3)
+#login page
+browser.find_element(By.XPATH,'/html/body/div[2]/div/div/button').click()
+#username
+t.sleep(5)
+
+browser.find_element(By.XPATH,'//*[@id="container"]/div/div[1]/div[1]/div[2]/div[2]/form/div/div/input').send_keys("iphone 12")
+t.sleep(5)
+
+browser.find_element(By.XPATH,'//*[@id="container"]/div/div[1]/div[1]/div[2]/div[2]/form/div/button').click()
+t.sleep(5)
+
+
+
+browser.find_element(By.XPATH,'//*[@id="container"]/div/div[3]/div[1]/div[2]/div[6]/div/div/div/a/div[2]/div[1]/div[1]').click()
+
+
+browser.implicitly_wait(20)
+#browser.current_window_handle
+window_after = browser.window_handles[1]
+browser.switch_to.window(window_after)
+action = ActionChains(browser)
+
+element=browser.find_element(By.XPATH,'/html/body/div[1]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[2]/form/button').click()
+#action.click_and_hold(on_element = element)
+#action.perform()
+browser.find_element(By.XPATH,'/html/body/div[1]/div/div[2]/div/div[1]/div[1]/div/div/div/div/div[1]/div/form/div[1]/input').send_keys("lbclbc089@gmail.com")
+browser.find_element(By.XPATH,'/html/body/div[1]/div/div[2]/div/div[1]/div[1]/div/div/div/div/div[1]/div/form/div[3]/button').click()
+t.sleep(20)
+
+
+
+
+
+
+
+
+
+'''
+browser.find_element(By.XPATH,'//*[@id="container"]/div/div[1]/div[1]/div[2]/div[3]/div/div/div/a').click()
+t.sleep(5)
+browser.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input').send_keys("lbclbc089@gmail.com")
+t.sleep(15)
+#click
+s=browser.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div/div[2]/div/form/div[3]/button')
+
+#browser.find_element(By.XPATH,)
+click = ActionChains(browser)
+click.click_and_hold(s)
+t.sleep(10)
+click.perform()
+t.sleep(5)
+'''
+
+
+
+
+
+#browser.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div/div[2]/div/form/div[3]/button').click()
+
+
+
+
+
+
